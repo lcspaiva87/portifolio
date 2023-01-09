@@ -1,11 +1,4 @@
-import {
-    Box,
-    Flex,
-    StackDivider,
-    Text,
-    useMediaQuery,
-    VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import { TypeWriteHome } from "../TypeWriteHome";
 import Lottie from "react-lottie";
 import animationData from "./dev_gif.json";
