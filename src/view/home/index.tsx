@@ -3,7 +3,7 @@ import { memo } from "react";
 import { About } from "./components/About";
 import { Skill } from "./components/Skill";
 
-const HomeView = () => {
+const HomeView = ({ skills }: any) => {
     const Header = dynamic(() => import("./components/Header/index"), {
         ssr: false,
     });
@@ -13,12 +13,13 @@ const HomeView = () => {
             ssr: false,
         }
     );
+
     return (
         <>
             <Header />
             <Presentation />
             <About />
-            <Skill />
+            <Skill skill={skills} />
         </>
     );
 };

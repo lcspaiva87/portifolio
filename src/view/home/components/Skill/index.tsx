@@ -1,114 +1,26 @@
-import {
-    Box,
-    Center,
-    Flex,
-    Grid,
-    Text,
-    Wrap,
-    WrapItem,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { AiFillHtml5 } from "react-icons/ai";
-export function Skill() {
+import { CardSkill } from "./CardSkill";
+import { Skill } from "@prisma/client";
+interface SkillProps {
+    skill: Skill[];
+}
+export function Skill({ skill }: SkillProps) {
     return (
         <Flex alignItems="center" justifyContent="center">
             <Flex alignItems="center" justifyContent="center" width="54rem">
-                <Wrap spacing="110px" justify="center">
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
-                    <WrapItem>
-                        <Box border="1px solid #FF0080" padding="40px">
-                            <Flex
-                                alignItems="center"
-                                justifyContent="center"
-                                flexDirection="column"
-                            >
-                                <AiFillHtml5 fontSize="90px" />
-                                <Text as="span">HTML</Text>
-                            </Flex>
-                        </Box>
-                    </WrapItem>
+                <Wrap justify="center">
+                    {skill.map((item: Skill) => (
+
+                        <WrapItem  key={item.id}>
+                            <CardSkill
+                                title={item.name}
+                                color={item.color}
+                                icon={item.image}
+
+                            />
+                        </WrapItem>
+                    ))}
                 </Wrap>
             </Flex>
         </Flex>
