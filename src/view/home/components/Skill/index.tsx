@@ -1,5 +1,4 @@
-import { Box, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
-import { AiFillHtml5 } from "react-icons/ai";
+import {  Flex,  Wrap, WrapItem } from "@chakra-ui/react";
 import { CardSkill } from "./CardSkill";
 import { Skill } from "@prisma/client";
 interface SkillProps {

@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Container, Box } from "@chakra-ui/react";
+import { Flex, Text, Image, Box } from "@chakra-ui/react";
 import { User } from "phosphor-react";
 
 export function About() {
