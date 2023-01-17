@@ -10,7 +10,6 @@ export function Skill({ skill }: SkillProps) {
             <Flex alignItems="center" justifyContent="center" width="54rem">
                 <Wrap justify="center">
                     {skill.map((item: Skill) => (
-
                         <WrapItem  key={item.id}>
                             <CardSkill
                                 title={item.name}
