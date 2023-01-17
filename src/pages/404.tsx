@@ -1,4 +1,4 @@
-import { Button, Center, Flex, Grid } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Lottie from "react-lottie";
 import Header from "../view/home/components/Header";
@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 const Page404 = () => {
     const router = useRouter();
-    //
     const defaultOptions = {
         loop: true,
         autoplay: true,
