@@ -1,56 +1,27 @@
-import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
-import { TypeWriteHome } from "../TypeWriteHome";
-import Lottie from "react-lottie";
-import animationData from "./dev_gif.json";
-export default function Skill() {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
-    const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
+import { Box, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { AiFillHtml5 } from "react-icons/ai";
+import { CardSkill } from "./CardSkill";
+import { Skill } from "@prisma/client";
+interface SkillProps {
+    skill: Skill[];
+}
+export function Skill({ skill }: SkillProps) {
     return (
         <Flex alignItems="center" justifyContent="center">
-            <Flex
-                width="100%"
-                maxWidth="1216px"
-                alignItems="center"
-                justifyContent={isLargerThan1280 ? "space-between" : "center"}
-            >
-                <Flex
-                    flexDirection="column"
-                    alignItems={isLargerThan1280 ? "" : "center"}
-                >
-                    <Text
-                        fontSize={isLargerThan1280 ? "4xl" : "3xl"}
-                        fontWeight="bold"
-                    >
-                        Olá, eu sou
-                    </Text>
-                    <Text
-                        bgGradient="linear(to-l, #7928CA, #FF0080)"
-                        bgClip="text"
-                        fontSize={isLargerThan1280 ? "6xl" : "3xl"}
-                        fontWeight="extrabold"
-                    >
-                        LUCAS PAIVA
-                    </Text>
-                    <TypeWriteHome />
-                </Flex>
-                {isLargerThan1280 && (
-                    <>
-                        <Box>
-                            <Lottie
-                                options={defaultOptions}
-                                height={600}
-                                width={600}
+            <Flex alignItems="center" justifyContent="center" width="54rem">
+                <Wrap justify="center">
+                    {skill.map((item: Skill) => (
+
+                        <WrapItem  key={item.id}>
+                            <CardSkill
+                                title={item.name}
+                                color={item.color}
+                                icon={item.image}
+
                             />
-                        </Box>
-                    </>
-                )}
+                        </WrapItem>
+                    ))}
+                </Wrap>
             </Flex>
         </Flex>
     );
