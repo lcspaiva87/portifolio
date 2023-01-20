@@ -7,7 +7,7 @@ import { prisma } from "../services";
 
 // eslint-disable-next-line react/prop-types
 
-const Home: NextPage = ({skills}:any) => {
+const Home: NextPage = ({ skills, project }: any) => {
     return (
         <>
             <Head>
@@ -21,20 +21,23 @@ const Home: NextPage = ({skills}:any) => {
                     content="width=device-width, initial-scale=1"
                 />
                 <link rel="icon" href="/favicon.ico" />
+
+
             </Head>
-            <HomeView  skills={skills} />
+            <HomeView skills={skills} project={project} />
         </>
     );
 };
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-
     const skills = await prisma?.skill.findMany();
-    return {
-        props :{
-            skills
-        }
+    const project = await prisma.project.findMany();
 
+    return {
+        props: {
+            project,
+            skills,
+        },
     };
 };

@@ -2,19 +2,28 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
-
-
 model Skill {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  image String
-  color String
+    id    String @id @default(auto()) @map("_id") @db.ObjectId
+    name  String
+    image String
+    color String
+}
+
+model Project {
+    id          String @id @default(auto()) @map("_id") @db.ObjectId
+    title       String
+    url         String @unique
+    type        String
+    dirName     String
+    github      String
+    description String
+    tag         Json
 }

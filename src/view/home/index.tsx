@@ -1,9 +1,10 @@
 import dynamic from "next/dynamic";
 import { memo } from "react";
 import { About } from "./components/About";
+import { Projects } from "./components/Projetcts";
 import { Skill } from "./components/Skill";
 
-const HomeView = ({ skills }: any) => {
+const HomeView = ({ skills, project }: any) => {
     const Header = dynamic(() => import("./components/Header/index"), {
         ssr: false,
     });
@@ -20,6 +21,7 @@ const HomeView = ({ skills }: any) => {
             <Presentation />
             <About />
             <Skill skill={skills} />
+            <Projects project={project} />
         </>
     );
 };

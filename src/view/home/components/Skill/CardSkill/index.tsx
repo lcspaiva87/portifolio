@@ -9,7 +9,7 @@ import { MotionFlex } from "./animation";
 interface CardSkillProps {
     title: string;
     icon: string;
-    color: string;
+    color?: string | any;
 }
 export function CardSkill({ color, icon, title }: CardSkillProps) {
     return (
@@ -53,8 +53,8 @@ export function CardSkill({ color, icon, title }: CardSkillProps) {
                         flexDirection="column"
                     >
                         <Image
-                            borderRadius="full"
-                            boxSize="40px"
+
+                            boxSize="50px"
                             src={icon}
                             alt={title}
                         />
