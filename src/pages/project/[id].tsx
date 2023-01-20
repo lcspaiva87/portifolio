@@ -12,16 +12,24 @@ import {
     Text,
     Wrap,
     WrapItem,
-    VStack,
-    HStack,
 } from "@chakra-ui/react";
 import { ArrowLeft, GitlabLogo } from "phosphor-react";
 import { Link as LinkIcon } from "phosphor-react";
-interface ProjectProps {
-    project: Project[];
-}
 
+import { useState } from "react";
 export default function project({ project }: any) {
+
+    const [fileExists, setFileExists] = useState(false);
+
+    const checkFile = async () => {
+        try {
+            const response = await fetch(`/gif/${project.title}.gif`, { method: "HEAD" });
+            setFileExists(response.ok);
+        } catch (error) {
+            setFileExists(false);
+        }
+    };
+
     return (
         <>
             <Link href="/">
@@ -41,7 +49,12 @@ export default function project({ project }: any) {
                 </Button>
             </Link>
             <Box overflow="hidden" position="relative">
-                <Image w="100%" h="600px" src="/gif/podcastr.gif" opacity="1" />
+                <Image
+                    w="100%"
+                    h="600px"
+                    src={fileExists ?`/gif/${project.title}.gif`: "/gif/error.png" }
+                    opacity="1"
+                />
 
                 <Flex
                     position="absolute"
@@ -74,7 +87,7 @@ export default function project({ project }: any) {
                         >
                             {project.description}
                         </Text>
-                        <Link>read more</Link>
+                        <Link href="#more">read more</Link>
                     </Box>
                     <Stack direction="row" spacing={4} mt="10px">
                         <Link href={project.url} isExternal>
@@ -113,7 +126,7 @@ export default function project({ project }: any) {
                 <Box border="2px solid #FF0080" borderRadius="10px">
                     <Image
                         borderRadius="10px"
-                        src="/project/podcastr/podcastr.png"
+                        src={`/project/${project.title}/${project.title}.png`}
                         w="400"
                         h="400px"
                     />
@@ -130,7 +143,7 @@ export default function project({ project }: any) {
                 >
                     Saiba mais sobre este projeto
                 </Text>
-                <Box w="400px">
+                <Box w="400px" id="more">
                     <Text as="span" fontWeight="bold">
                         {" "}
                         {project.description}
@@ -149,7 +162,14 @@ export default function project({ project }: any) {
 
                 <Text>Veja todas as características e detalhes do projeto</Text>
 
-                <Flex alignItems="center" gap={2} justifyContent="center" mt={10} mb={10}>
+                <Flex
+                    alignItems="center"
+                    gap={2}
+                    justifyContent="center"
+                    mt={10}
+                    mb={10}
+                    w="500px"
+                >
                     <Wrap justify="center">
                         {project.tag.map((skill: any) => (
                             <WrapItem key={skill.value}>
@@ -169,7 +189,10 @@ export default function project({ project }: any) {
                                         flexDirection="column"
                                     >
                                         <Image
-                                            src={`/skills/${skill.value}.svg`}
+                                            src={
+                                                `/skills/${skill.value}.svg ` ||
+                                                "error.png"
+                                            }
                                             width="40px"
                                             alt={skill.value}
                                         />
