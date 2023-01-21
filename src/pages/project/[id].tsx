@@ -18,18 +18,17 @@ import { Link as LinkIcon } from "phosphor-react";
 
 import { useState } from "react";
 export default function project({ project }: any) {
+
     const [fileExists, setFileExists] = useState(false);
 
-    (async () => {
+    const checkFile = async () => {
         try {
-            const response = await fetch(`/gif/${project.title.toLowerCase()}.gif`, {
-                method: "HEAD",
-            });
+            const response = await fetch(`/gif/${project.title}.gif`, { method: "HEAD" });
             setFileExists(response.ok);
         } catch (error) {
             setFileExists(false);
         }
-    })();
+    };
 
     return (
         <>
@@ -53,11 +52,7 @@ export default function project({ project }: any) {
                 <Image
                     w="100%"
                     h="600px"
-                    src={
-                        fileExists
-                            ? `/gif/${project.title.toLowerCase()}.gif`
-                            : "/gif/error.png"
-                    }
+                    src={fileExists ?`/gif/${project.title}.gif`: "/gif/error.png" }
                     opacity="1"
                 />
 
@@ -131,7 +126,7 @@ export default function project({ project }: any) {
                 <Box border="2px solid #FF0080" borderRadius="10px">
                     <Image
                         borderRadius="10px"
-                        src={`/project/${project.title.toLowerCase()}/${project.title.toLowerCase()}.png`}
+                        src={`/project/${project.title}/${project.title}.png`}
                         w="400"
                         h="400px"
                     />
@@ -188,7 +183,7 @@ export default function project({ project }: any) {
                                 >
                                     <Flex
                                         padding="24px"
-                                        w="154px"
+                                        w="114px"
                                         height="100px"
                                         alignItems="center"
                                         flexDirection="column"
