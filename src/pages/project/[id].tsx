@@ -193,7 +193,7 @@ export default function project({ project }: any) {
                                     >
                                         <Image
                                             src={
-                                                `/skills/${skill.value}.svg ` ||
+                                                `/skills/${skill.value.toLowerCase()}.svg ` ||
                                                 "error.png"
                                             }
                                             width="40px"
