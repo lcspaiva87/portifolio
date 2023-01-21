@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { Project } from "@prisma/client";
 import { prisma } from "../../services";
-
 import {
     Box,
     Button,
@@ -15,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { ArrowLeft, GitlabLogo } from "phosphor-react";
 import { Link as LinkIcon } from "phosphor-react";
-
 import { useState } from "react";
 export default function project({ project }: any) {
 
