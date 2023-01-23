@@ -1,14 +1,4 @@
-
-import {
-    Box,
-    Button,
-    Flex,
-    Image,
-    Link,
-    Stack,
-    Text,
-
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Link, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { ArrowLeft, GitlabLogo } from "phosphor-react";
 import { Link as LinkIcon } from "phosphor-react";
 import { useLayoutEffect, useState } from "react";
@@ -18,9 +8,8 @@ import "swiper/css/pagination";
 
 import { Mousewheel, Pagination } from "swiper";
 
-export function ProjectView({project}:any){
-    console.log("project",project)
-      const [fileExists, setFileExists] = useState(false);
+export function ProjectView({ project }: any) {
+    const [fileExists, setFileExists] = useState(false);
     useLayoutEffect(() => {
         (async () => {
             try {
@@ -36,8 +25,8 @@ export function ProjectView({project}:any){
             }
         })();
     }, []);
-    return(
-              <Box w="100%">
+    return (
+        <Box position="absolute">
             <Link href="/">
                 <Button
                     leftIcon={<ArrowLeft size={20} />}
@@ -54,10 +43,10 @@ export function ProjectView({project}:any){
                     Voltar
                 </Button>
             </Link>
-            <Box position="relative" >
+            <Box position="relative">
                 <Image
-                    w="100%"
-                    h="600px"
+                    w="auto"
+                    h="auto"
                     src={
                         fileExists
                             ? `/gif/${project.title.toLowerCase()}.gif`
@@ -70,7 +59,7 @@ export function ProjectView({project}:any){
                     position="absolute"
                     padding="0 1rem 2rem 1rem"
                     bottom="0"
-                    height="100%"
+                    height={["auto", "100%"]}
                     width="100%"
                     flexDirection="column"
                     justifyContent="flex-end"
@@ -126,7 +115,6 @@ export function ProjectView({project}:any){
                     </Stack>
                 </Flex>
             </Box>
-{/*
             <Swiper
                 direction={"vertical"}
                 slidesPerView={1}
@@ -138,14 +126,13 @@ export function ProjectView({project}:any){
                 modules={[Mousewheel, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide >
+                <SwiperSlide>
                     <Box as="section" justifyContent="center">
                         <Box>
                             <Box>
                                 <Box>
                                     <Image
                                         height="30rem"
-
                                         src={`/project/${project.title.toLowerCase()}/${project.title.toLowerCase()}.png`}
                                     />
                                 </Box>
@@ -153,18 +140,8 @@ export function ProjectView({project}:any){
                         </Box>
                     </Box>
                 </SwiperSlide>
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper> */}
-
-            {/* <Flex
+            </Swiper>
+            <Flex
                 mt="10rem"
                 borderRadius="10px"
                 alignItems="center"
@@ -245,13 +222,13 @@ export function ProjectView({project}:any){
                         ))}
                     </Wrap>
                 </Flex>
-            </Flex> */}
+            </Flex>
 
-            <Box bg="gray.700" color="white" p={4} mt="10px" >
+            <Box bg="gray.700" color="white" p={4} mt="10px">
                 <Text>Copyright © {new Date().getFullYear()} My Company</Text>
             </Box>
         </Box>
+
+
     );
 }
-
-
