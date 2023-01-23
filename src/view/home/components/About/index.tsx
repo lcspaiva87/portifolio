@@ -4,7 +4,7 @@ import { User } from "phosphor-react";
 export function About() {
     return (
 
-        <Flex alignItems='center' justifyContent='center' flexDirection='column' mt='15rem' >
+        <Flex alignItems='center' justifyContent='center' flexDirection='column' mt='15rem' id="about" >
             <Flex alignItems='center' gap={2} justifyContent='center'>
                 <User size='50px' color='#FF0080' />
                 <Text

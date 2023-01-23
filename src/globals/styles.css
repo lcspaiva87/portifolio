@@ -1,0 +1,23 @@
+.swiper {
+    width: 50rem;
+    height: 30rem;
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #FF0080;
+}
+
+@media screen and (max-width: 900px) {
+    .swiper{
+        width:59rem;
+
+    }
+
+  }
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+
+}

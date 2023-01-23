@@ -21,8 +21,6 @@ const Home: NextPage = ({ skills, project }: any) => {
                     content="width=device-width, initial-scale=1"
                 />
                 <link rel="icon" href="/favicon.ico" />
-
-
             </Head>
             <HomeView skills={skills} project={project} />
         </>
