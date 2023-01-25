@@ -11,10 +11,10 @@ export interface Skill {
 
 
 export interface ProjectsProps {
-    project: Projects[];
+    project: Project[];
 }
 
-export interface Projects {
+export interface Project {
     id:          string;
     title:       string;
     url:         string;

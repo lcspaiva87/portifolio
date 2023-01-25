@@ -28,37 +28,37 @@ export function ProjectView({ project }: any) {
     }, []);
     const router = useRouter()
 
-    const handleClick = (e:any) =>{
+    const handleClick = (e: any) => {
         router.push("/")
     }
     return (
         <Box position="absolute" overflow="hidden">
 
-                <Button
-                    leftIcon={<ArrowLeft size={20} />}
-                    position="absolute"
-                    padding={10}
-                    color="#FF0080"
-                    bg="none"
-                    _hover={{
-                        bg: "none",
-                    }}
-                    fontWeight="bold"
-                    zIndex={1}
-                    onClick={handleClick}
-                >
-                    Voltar
-                </Button>
+            <Button
+                leftIcon={<ArrowLeft size={20} />}
+                position="absolute"
+                padding={10}
+                color="#FF0080"
+                bg="none"
+                _hover={{
+                    bg: "none",
+                }}
+                fontWeight="bold"
+                zIndex={1}
+                onClick={handleClick}
+            >
+                Voltar
+            </Button>
 
             <Box position="relative">
-                {fileExists ?(
+                {fileExists ? (
                     <Image
                         src={
-                                 `/gif/${project.title.toLowerCase()}.gif`
+                            `/gif/${project.title.toLowerCase()}.gif`
                         }
                         opacity="1"
                     />
-                ):(
+                ) : (
 
                     <Box bg="#fff" w="118.9rem" h="100vh" />
                 )}

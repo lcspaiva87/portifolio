@@ -5,15 +5,15 @@ import { GetServerSideProps, NextPage } from "next";
 
 import { Projects, Skills } from "../mock/project";
 import { Box, Text } from "@chakra-ui/react";
-import { ProjectsProps, SkillsProps } from "../@types";
+import { Project, ProjectsProps, Skill, SkillsProps } from "../@types";
+import project from "./project/[id]";
 
 // eslint-disable-next-line react/prop-types
 interface Homeprops{
     project:ProjectsProps
     skill:SkillsProps
 }
-const Home: NextPage = ({project,skill}:Homeprops) => {
-
+const Home: NextPage = (props) => {
     return (
         <>
             <Head>
@@ -28,7 +28,7 @@ const Home: NextPage = ({project,skill}:Homeprops) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <HomeView skill={skill} project={project} />
+            <HomeView skills={props.skill} project={props.project} />
             <Box bg="gray.700" color="white" p={4} mt="10px">
                 <Text>Copyright © {new Date().getFullYear()} My Company</Text>
             </Box>

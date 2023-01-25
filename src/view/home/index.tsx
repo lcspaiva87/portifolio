@@ -6,7 +6,7 @@ import { Projects } from "./components/Projetcts";
 import { Skill } from "./components/Skill";
 
 
-const HomeView = ({ skill, project }: any) => {
+const HomeView = ({ skills, project }: any) => {
     const Header = dynamic(() => import("./components/Header/index"), {
         ssr: false,
     });
@@ -23,7 +23,7 @@ const HomeView = ({ skill, project }: any) => {
             <Header />
             <Presentation />
             <About />
-            <Skill skill={skill} />
+            <Skill skill={skills} />
             <Projects project={project} />
         </>
     );
