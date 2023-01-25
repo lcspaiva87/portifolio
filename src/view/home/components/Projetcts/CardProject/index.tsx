@@ -5,18 +5,18 @@ interface CardProjectPorps {
     title: string;
     img: string;
     type: string;
-    id: string
-
+    id: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-export function CardProject({ img, title, type ,id}: CardProjectPorps) {
+export function CardProject({ img, title, type, id }: CardProjectPorps) {
     return (
         <Flex
             border="2px solid #626264"
-            width="500px"
-            height="200px"
+            maxWidth="295px"
+            minWidth="350px"
+            height="150px"
             borderRadius="5px"
             position="relative"
             overflow="hidden"
@@ -50,8 +50,22 @@ export function CardProject({ img, title, type ,id}: CardProjectPorps) {
                         height: "100%",
                     }}
                 >
-                    <Text as="h2">{type}</Text>
-                    <Text as="span">{title}</Text>
+                    <Text
+                        as="h2"
+                        bgGradient="linear(to-l, #7928CA, #FF0080)"
+                        bgClip="text"
+                        fontWeight="bold"
+                    >
+                        {type}
+                    </Text>
+                    <Text
+                        as="span"
+                        bgGradient="linear(to-l, #7928CA, #FF0080)"
+                        bgClip="text"
+                        fontWeight="bold"
+                    >
+                        {title}
+                    </Text>
                 </Flex>
             </Link>
         </Flex>
