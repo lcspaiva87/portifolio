@@ -9,11 +9,17 @@ import { Project, ProjectsProps, Skill, SkillsProps } from "../@types";
 import project from "./project/[id]";
 
 // eslint-disable-next-line react/prop-types
-interface Homeprops{
-    project:ProjectsProps
-    skill:SkillsProps
+interface Homeprops {
+    project: ProjectsProps
+    skill: SkillsProps
 }
 const Home: NextPage = (props) => {
+
+const propsValue = [props].map((item: any) => ({
+    project: item.project,
+    skill: item.skill,
+      }))
+    console.log("aaaa",)
     return (
         <>
             <Head>
@@ -28,7 +34,7 @@ const Home: NextPage = (props) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <HomeView skills={props.skill} project={props.project} />
+            <HomeView skills={propsValue[0]["skill"]} project={propsValue[0]["project"]} />
             <Box bg="gray.700" color="white" p={4} mt="10px">
                 <Text>Copyright © {new Date().getFullYear()} My Company</Text>
             </Box>
