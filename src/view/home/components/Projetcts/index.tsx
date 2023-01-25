@@ -1,4 +1,4 @@
-import { Flex, Wrap, WrapItem, Text, Button, Link } from "@chakra-ui/react";
+import { Flex, Wrap, WrapItem, Text, Button, Link, Box } from "@chakra-ui/react";
 import { Project } from "@prisma/client";
 import { GithubLogo, ProjectorScreenChart } from "phosphor-react";
 import { CardProject } from "./CardProject";
@@ -8,7 +8,7 @@ interface ProjectProps {
 }
 export function Projects({ project }: ProjectProps) {
     return (
-        <>
+        <Box>
             <Flex
                 alignItems="center"
                 justifyContent="center"
@@ -25,8 +25,8 @@ export function Projects({ project }: ProjectProps) {
                     Projetos
                 </Text>
             </Flex>
-            <Flex alignItems="center" gap={2} justifyContent="center">
-                <Flex alignItems="center" justifyContent="center">
+            <Flex alignItems="center" gap={2} justifyContent="center" bg="#3c3d3f" >
+                <Flex alignItems="center" justifyContent="center" w="70rem" mt="1rem" mb="1rem">
                     <Wrap justify="center">
                         {project?.map((item: Project) => (
                             <WrapItem key={item.id}>
@@ -52,6 +52,6 @@ export function Projects({ project }: ProjectProps) {
                     </Button>
                 </Link>
             </Flex>
-        </>
+        </Box>
     );
 }

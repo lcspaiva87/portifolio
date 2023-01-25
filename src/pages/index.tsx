@@ -1,13 +1,19 @@
 import Head from "next/head";
 
-import { Inter } from "@next/font/google";
 import HomeView from "../view/home";
 import { GetServerSideProps, NextPage } from "next";
-import { prisma } from "../services";
+
+import { Projects, Skills } from "../mock/project";
+import { Box, Text } from "@chakra-ui/react";
+import { ProjectsProps, SkillsProps } from "../@types";
 
 // eslint-disable-next-line react/prop-types
+interface Homeprops{
+    project:ProjectsProps
+    skill:SkillsProps
+}
+const Home: NextPage = ({project,skill}:Homeprops) => {
 
-const Home: NextPage = ({ skills, project }: any) => {
     return (
         <>
             <Head>
@@ -22,20 +28,23 @@ const Home: NextPage = ({ skills, project }: any) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <HomeView skills={skills} project={project} />
+            <HomeView skill={skill} project={project} />
+            <Box bg="gray.700" color="white" p={4} mt="10px">
+                <Text>Copyright © {new Date().getFullYear()} My Company</Text>
+            </Box>
         </>
     );
 };
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const skills = await prisma?.skill.findMany();
-    const project = await prisma.project.findMany();
+    const skill = Skills;
+    const project = Projects;
 
     return {
         props: {
             project,
-            skills,
+            skill,
         },
     };
 };

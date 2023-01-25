@@ -5,7 +5,8 @@ import { About } from "./components/About";
 import { Projects } from "./components/Projetcts";
 import { Skill } from "./components/Skill";
 
-const HomeView = ({ skills, project }: any) => {
+
+const HomeView = ({ skill, project }: any) => {
     const Header = dynamic(() => import("./components/Header/index"), {
         ssr: false,
     });
@@ -22,11 +23,8 @@ const HomeView = ({ skills, project }: any) => {
             <Header />
             <Presentation />
             <About />
-            <Skill skill={skills} />
+            <Skill skill={skill} />
             <Projects project={project} />
-            <Box bg="gray.700" color="white" p={4} mt="10px">
-                <Text>Copyright © {new Date().getFullYear()} My Company</Text>
-            </Box>
         </>
     );
 };

@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Mousewheel, Pagination } from "swiper";
+import { useRouter } from "next/router";
 
 export function ProjectView({ project }: any) {
     const [fileExists, setFileExists] = useState(false);
@@ -25,9 +26,14 @@ export function ProjectView({ project }: any) {
             }
         })();
     }, []);
+    const router = useRouter()
+
+    const handleClick = (e:any) =>{
+        router.push("/")
+    }
     return (
-        <Box position="absolute">
-            <Link href="/">
+        <Box position="absolute" overflow="hidden">
+
                 <Button
                     leftIcon={<ArrowLeft size={20} />}
                     position="absolute"
@@ -39,27 +45,29 @@ export function ProjectView({ project }: any) {
                     }}
                     fontWeight="bold"
                     zIndex={1}
+                    onClick={handleClick}
                 >
                     Voltar
                 </Button>
-            </Link>
+
             <Box position="relative">
-                <Image
-                    w="auto"
-                    h="auto"
-                    src={
-                        fileExists
-                            ? `/gif/${project.title.toLowerCase()}.gif`
-                            : "/gif/error.png"
-                    }
-                    opacity="1"
-                />
+                {fileExists ?(
+                    <Image
+                        src={
+                                 `/gif/${project.title.toLowerCase()}.gif`
+                        }
+                        opacity="1"
+                    />
+                ):(
+
+                    <Box bg="#fff" w="118.9rem" h="100vh" />
+                )}
 
                 <Flex
                     position="absolute"
                     padding="0 1rem 2rem 1rem"
                     bottom="0"
-                    height={["auto", "100%"]}
+                    height="100%"
                     width="100%"
                     flexDirection="column"
                     justifyContent="flex-end"
