@@ -236,7 +236,7 @@ export const Skills = [
     {
         _id: 6,
         name: "Mu-Ui",
-        image: "/skills/mu-ui.svg",
+        image: "/skills/Material-ui.svg",
         color: "#00b0ff",
     },
     {
@@ -250,5 +250,17 @@ export const Skills = [
         name: "HTML",
         image: "/skills/html.svg",
         color: "#EB8C1D",
+    },
+    {
+        _id: 9,
+        name: "Styled-Components",
+        image: "/skills/styled-components.svg",
+        color: "#4A345B",
+    },
+    {
+        _id: 10,
+        name: "wordpress",
+        image: "/skills/wordpress.svg",
+        color: "#01579B",
     },
 ];
