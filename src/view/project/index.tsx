@@ -1,13 +1,24 @@
-import { Box, Button, Flex, Image, Link, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+    Box,
+    Button,
+    Flex,
+    Image,
+    Link,
+    Stack,
+    Text,
+    Wrap,
+    WrapItem,
+} from "@chakra-ui/react";
 import { ArrowLeft, GitlabLogo } from "phosphor-react";
 import { Link as LinkIcon } from "phosphor-react";
 import { useLayoutEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import notfound from "../../../public/gif/notfound.json";
 import { Mousewheel, Pagination } from "swiper";
 import { useRouter } from "next/router";
+import Lottie from "react-lottie";
 
 export function ProjectView({ project }: any) {
     const [fileExists, setFileExists] = useState(false);
@@ -26,14 +37,21 @@ export function ProjectView({ project }: any) {
             }
         })();
     }, []);
-    const router = useRouter()
+    const router = useRouter();
 
     const handleClick = (e: any) => {
-        router.push("/")
-    }
+        router.push("/");
+    };
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: notfound,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
     return (
-        <Box position="absolute" overflow="hidden">
-
+        <Box position="absolute">
             <Button
                 leftIcon={<ArrowLeft size={20} />}
                 position="absolute"
@@ -53,14 +71,18 @@ export function ProjectView({ project }: any) {
             <Box position="relative">
                 {fileExists ? (
                     <Image
-                        src={
-                            `/gif/${project.title.toLowerCase()}.gif`
-                        }
+                        src={`/gif/${project.title.toLowerCase()}.gif`}
                         opacity="1"
                     />
                 ) : (
+                    <Flex bg="#fff" justifyContent="center" alignItems="center" maxWidth="100%">
+                        <Lottie
+                            options={defaultOptions}
+                            height={900}
+                            width="100%"
 
-                    <Box bg="#fff" w="118.9rem" h="100vh" />
+                        />
+                    </Flex>
                 )}
 
                 <Flex
@@ -134,8 +156,8 @@ export function ProjectView({ project }: any) {
                 modules={[Mousewheel, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                    <Box as="section" justifyContent="center">
+                <SwiperSlide >
+                    <Box  as="section" justifyContent="center">
                         <Box>
                             <Box>
                                 <Box>
@@ -155,10 +177,7 @@ export function ProjectView({ project }: any) {
                 alignItems="center"
                 justifyContent="center"
                 flexDirection="column"
-
             >
-
-
                 <Text
                     as="span"
                     fontSize="4xl"
@@ -236,7 +255,5 @@ export function ProjectView({ project }: any) {
                 <Text>Copyright © {new Date().getFullYear()} My Company</Text>
             </Box>
         </Box>
-
-
     );
 }

@@ -20,6 +20,7 @@ export function CardSkill({ color, icon, title }: CardSkillProps) {
             justifyContent="center"
             alignItems="center"
             position="relative"
+            borderRadius={8}
         >
             <MotionFlex
                 background={color}
