@@ -4,6 +4,7 @@ import { memo } from "react";
 import { About } from "./components/About";
 import { Projects } from "./components/Projetcts";
 import { Skill } from "./components/Skill";
+import { WorkExperience } from "./components/workExperience";
 
 
 const HomeView = ({ skills, project }: any) => {
@@ -25,6 +26,7 @@ const HomeView = ({ skills, project }: any) => {
             <About />
             <Skill skill={skills} />
             <Projects project={project} />
+            <WorkExperience />
         </>
     );
 };
