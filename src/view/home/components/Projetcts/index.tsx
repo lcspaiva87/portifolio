@@ -8,7 +8,7 @@ interface ProjectProps {
 }
 export function Projects({ project }: ProjectProps) {
     return (
-        <Box>
+        <Box id="projetos">
             <Flex
                 alignItems="center"
                 justifyContent="center"
@@ -25,7 +25,7 @@ export function Projects({ project }: ProjectProps) {
                     Projetos
                 </Text>
             </Flex>
-            <Flex alignItems="center" gap={2} justifyContent="center" bg="#3c3d3f" >
+            <Flex alignItems="center" gap={2} justifyContent="center" bg="#3c3d3f29" >
                 <Flex alignItems="center" justifyContent="center" w="70rem" mt="1rem" mb="1rem">
                     <Wrap justify="center">
                         {project?.map((item: Project) => (

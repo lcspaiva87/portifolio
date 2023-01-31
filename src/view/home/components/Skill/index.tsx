@@ -6,10 +6,10 @@ interface SkillProps {
     skill: Skill[];
 }
 export function Skill({ skill }: SkillProps) {
-    console.log("skill",skill)
+
     return (
         <Box mt='15rem'>
-            <Flex alignItems="center" gap={2} justifyContent="center" mb="2rem">
+            <Flex alignItems="center" gap={2} justifyContent="center" mb="2rem" id="habilidades">
                 <ProjectorScreenChart size="50px" color="#FF0080" />
                 <Text
                     bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -17,7 +17,7 @@ export function Skill({ skill }: SkillProps) {
                     fontSize="5xl"
                     fontWeight="bold"
                 >
-                    Sobre
+                    Skill
                 </Text>
             </Flex>
             <Flex alignItems="center" justifyContent="center">
