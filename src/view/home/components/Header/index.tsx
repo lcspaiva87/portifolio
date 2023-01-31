@@ -25,29 +25,35 @@ export default function Header() {
     const btnRef = useRef(null);
 
     return (
-        <Flex
-            bg="gray.900"
-            p={4}
-            color="white"
-            justifyContent="center"
-            alignItems="center"
+        <header
+           style={{
+            position:"fixed",
+            width:"100%",
+            top:0,
+            height:"4rem",
+            fontWeight:600,
+            fontSize:"1.2rem",
+           zIndex:10,
+           display:"flex",
+           justifyContent:"space-around",
+           padding:"1px 0",
+           alignItems:"center",
+           background:"#181B23"
+        }}
         >
             <Flex
-                width="100%"
-                maxWidth="1216px"
-                alignItems="center"
-                justifyContent="space-between"
             >
                 <Image src="/logo.svg" alt="Lucas Paiva" w={150} />
             </Flex>
             {isLargerThan1280 ? (
-                <Stack direction={["column", "row"]} spacing="10px">
+                <Flex gap={5}  zIndex={10} justifyContent="center"
+                alignItems="center" >
                     <NavLink href="/" title="Inicio"  />
                     <NavLink href="#about" title="Sobre" />
                     <NavLink href="#habilidades" title="Habilidades" />
                     <NavLink href="#projetos" title="Projetos" />
                     <NavLink href="#experiencia" title="Experiência" />
-                </Stack>
+                </Flex>
             ) : (
                 <>
                     <IconButton
@@ -90,6 +96,6 @@ export default function Header() {
                     </Drawer>
                 </>
             )}
-        </Flex>
+        </header>
     );
 }

@@ -9,7 +9,7 @@ interface NavLinkProps{
 export  default function NavLink({href,title}:NavLinkProps){
     return(
 
-        <ActiveLink href={href} passHref>
+        <ActiveLink href={href} passHref >
             <ChakraLink fontSize='20px' fontWeight='bold'>{title}</ChakraLink>
         </ActiveLink>
 

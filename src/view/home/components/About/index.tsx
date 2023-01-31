@@ -4,7 +4,15 @@ import { User } from "phosphor-react";
 export function About() {
     return (
 
-        <Flex alignItems='center' justifyContent='center' flexDirection='column' mt='15rem' id="about" >
+        <Box
+            as="section"
+            pt='2rem'
+            alignItems='center'
+            justifyContent='center'
+            flexDirection='column'
+            id="about"
+            display={"inline-flex"}
+        >
             <Flex alignItems='center' gap={2} justifyContent='center'>
                 <User size='50px' color='#FF0080' />
                 <Text
@@ -13,26 +21,42 @@ export function About() {
                     fontSize='5xl'
                     fontWeight='bold'
                 >
-                        Sobre
+                    Sobre
                 </Text>
             </Flex>
-            <Box as='section' display='grid' justifyContent='center' alignContent='center' gridTemplateColumns='repeat(2,1fr)'>
-                <Flex placeSelf='center' mb='2rem' position='relative' transition='all 1s ease 0s'>
+            <Box
+                as='section'
+                display={["flex","grid"]}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                gridTemplateColumns={" repeat(2, 1fr)"}
+
+            >
+                <Flex
+                    placeSelf='center'
+                    mb='2rem'
+                    position='relative'
+                    transition='all 1s ease 0s'
+                    width="200px"
+                    justifySelf="center"
+                    alignItems="center"
+                    marginBottom="2rem"
+                >
                     <Image
                         borderRadius='full'
-                        boxSize='150px'
                         src='https://bit.ly/dan-abramov'
                         alt='Dan Abramov'
                     />
                 </Flex>
-                <Box w='31rem'fontWeight={500}>
+                <Box p="0 1rem" textAlign="start" maxWidth="31rem" fontWeight={500}>
                     <Flex gap={1} flexDirection='column' >
                         <Text as='p'>Sou um desenvolvedor Front-End que vive em Maracanau Ceara, sou formado em Sistema da Informaçao.</Text>
                         <Text as='p'>Meu interesse e primeiro contato com desenvolvimento web começou em 2019, com a criação de um site feito em Html, Css e JavaScript.</Text>
                     </Flex>
                 </Box>
             </Box>
-        </Flex>
+        </Box>
 
     );
 }
