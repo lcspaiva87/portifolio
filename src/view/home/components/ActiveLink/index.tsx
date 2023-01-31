@@ -11,35 +11,24 @@ export default function ActiveLink({
     shouldMatchExactHref = false,
     ...rest
 }: ActiveLinkProps) {
-    const { asPath } = useRouter();
+    const { asPath,route } = useRouter();
     let isActive = false;
+    let linkAspath = String(asPath).replace("#", "")
+    let linkHref = String(rest.href).replace("#", "/")
+    console.log("route",route)
 
-    if (shouldMatchExactHref && (asPath === rest.href || asPath === rest.as)) {
+
+
+    if (linkAspath === linkHref ) {
         isActive = true;
-    }
-    if (
-        (!shouldMatchExactHref && asPath.startsWith(String(rest.href))) ||
-        asPath.startsWith(String(rest.as))
-    ) {
-        isActive = true;
-    }
+      }
     return (
-        <>
-            {isActive ? (
-                <Link {...rest}>
-                    <Box>
-                        {cloneElement(children, {
-                            color: isActive ? "#FF0080" : "gray.100",
-                        })}
-                    </Box>
-                </Link>
-            ) : (
-                <Link {...rest}>
-                    {cloneElement(children, {
-                        color: isActive ? "#FF0080" : "gray.100",
-                    })}
-                </Link>
-            )}
-        </>
-    );
+        <Link {...rest}>
+            {cloneElement(children, {
+                color: isActive ? "#FF0080" : "gray.100",
+            })}
+        </Link>
+    )
 }
+
+

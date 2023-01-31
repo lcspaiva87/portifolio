@@ -42,11 +42,11 @@ export default function Header() {
             </Flex>
             {isLargerThan1280 ? (
                 <Stack direction={["column", "row"]} spacing="10px">
-                    <NavLink href="/" title="Inicio" />
+                    <NavLink href="/" title="Inicio"  />
                     <NavLink href="#about" title="Sobre" />
-                    <NavLink href="/habilidades" title="Habilidades" />
-                    <NavLink href="/projetos" title="Projetos" />
-                    <NavLink href="/contato" title="Contato" />
+                    <NavLink href="#habilidades" title="Habilidades" />
+                    <NavLink href="#projetos" title="Projetos" />
+                    <NavLink href="#experiencia" title="Experiência" />
                 </Stack>
             ) : (
                 <>
@@ -74,7 +74,7 @@ export default function Header() {
                                     spacing="10px"
                                 >
                                     <NavLink href="/" title="Inicio" />
-                                    <NavLink href="/sobre" title="Sobre" />
+                                    <NavLink href="sobre" title="Sobre"  />
                                     <NavLink
                                         href="/habilidades"
                                         title="Habilidades"

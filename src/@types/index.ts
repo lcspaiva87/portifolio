@@ -28,3 +28,14 @@ export interface Project {
 export interface Tag {
     value: string;
 }
+
+export interface WorkProps{
+    id?:          number;
+    company?:     string;
+    office?:      string;
+    description?: string;
+    dateStart?:   string;
+    dateEnd?:     string;
+    monthStart?:  string;
+    monthEnd?:    string;
+}

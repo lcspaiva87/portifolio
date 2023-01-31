@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+
 export const theme = extendTheme({
     colors: {
         gray: {
@@ -23,9 +24,23 @@ export const theme = extendTheme({
             body: {
                 bg: "gray.900",
                 color: "gray.50",
-                width:"100%",
-                height:"100vh"
+                width: "100%",
+                height: "100vh",
+                fontSize: "Libre Baskerville,  sans-serif",
+                "::-webkit-scrollbar": {
+                    width: " 0.5rem",
+                    backgroundColor: "#000",
+
+                },
+                "::-webkit-scrollbar-thumb": {
+                    borderRadius: " 0.5rem",
+                    backgroundColor: "#7928CA",
+                },
             },
+            html: {
+               " scroll-behavior": "smooth !important",
+              }
+
         },
     },
 });
