@@ -1,4 +1,5 @@
 import {
+    Box,
     Flex,
     Image,
     Text,
@@ -13,7 +14,7 @@ interface CardSkillProps {
 }
 export function CardSkill({ color, icon, title }: CardSkillProps) {
     return (
-        <Flex
+        <Box
             width="200px"
             height="200px"
             overflow="hidden"
@@ -21,6 +22,8 @@ export function CardSkill({ color, icon, title }: CardSkillProps) {
             alignItems="center"
             position="relative"
             borderRadius={8}
+            display="grid"
+
         >
             <MotionFlex
                 background={color}
@@ -64,6 +67,6 @@ export function CardSkill({ color, icon, title }: CardSkillProps) {
                     </Flex>
                 </Flex>
             </Flex>
-        </Flex>
+        </Box>
     );
 }

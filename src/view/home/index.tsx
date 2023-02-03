@@ -26,9 +26,8 @@ const HomeView = ({ skills, project }: any) => {
             <Box as="section" mt="5rem" display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="5rem">
                 <Presentation />
                 <About />
-                {/*
-
                 <Skill skill={skills} />
+                {/*
                 <Projects project={project} />
                 <WorkExperience /> */}
             </Box>

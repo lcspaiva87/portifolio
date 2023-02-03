@@ -20,21 +20,21 @@ export function Skill({ skill }: SkillProps) {
                     Skill
                 </Text>
             </Flex>
-            <Flex alignItems="center" justifyContent="center">
-                <Flex alignItems="center" justifyContent="center" width="54rem">
-                    <Wrap justify="center">
+            <Box>
+                    <Box display={"grid"} alignItems="center" justifyContent="center" width="54rem" gridTemplateColumns={["repeat(2,1fr)","repeat(3,1fr)"]} gap={10}>
+                    <>
                         {skill.map((item: Skill) => (
-                            <WrapItem key={item.id}>
+                            <Box key={item.id}>
                                 <CardSkill
                                     title={item.name}
                                     color={item.color}
                                     icon={item.image}
                                 />
-                            </WrapItem>
+                            </Box>
                         ))}
-                    </Wrap>
-                </Flex>
-            </Flex>
+                    </>
+                </Box>
+            </Box>
         </Box>
     );
 }
