@@ -27,8 +27,8 @@ const HomeView = ({ skills, project }: any) => {
                 <Presentation />
                 <About />
                 <Skill skill={skills} />
-                {/*
                 <Projects project={project} />
+                {/*
                 <WorkExperience /> */}
             </Box>
         </>

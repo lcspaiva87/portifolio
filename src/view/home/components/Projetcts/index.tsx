@@ -8,12 +8,17 @@ interface ProjectProps {
 }
 export function Projects({ project }: ProjectProps) {
     return (
-        <Box id="projetos">
+        <Box
+            id="projetos"
+            as="section"
+            pt='2rem'
+            alignItems='center'
+            justifyContent='center'
+            flexDirection='column'
+            display={"inline-flex"}
+        >
             <Flex
-                alignItems="center"
-                justifyContent="center"
-                mt="10rem"
-                mb="5rem"
+                alignItems='center' gap={2} justifyContent='center'
             >
                 <ProjectorScreenChart size="50px" color="#FF0080" />
                 <Text
@@ -25,22 +30,29 @@ export function Projects({ project }: ProjectProps) {
                     Projetos
                 </Text>
             </Flex>
-            <Flex alignItems="center" gap={2} justifyContent="center" bg="#3c3d3f29" >
-                <Flex alignItems="center" justifyContent="center" w="70rem" mt="1rem" mb="1rem">
-                    <Wrap justify="center">
-                        {project?.map((item: Project) => (
-                            <WrapItem key={item.id}>
-                                <CardProject
-                                    title={item.title}
-                                    type={item.type}
-                                    img={item.dirName}
-                                    id={item.id}
-                                />
-                            </WrapItem>
-                        ))}
-                    </Wrap>
-                </Flex>
-            </Flex>
+            <Box
+                as='section'
+                display={["flex", "grid"]}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                gridTemplateColumns={" repeat(3, 1fr)"}
+                bg="#3c3d3f29"
+                gap={10}
+                >
+
+                {project?.map((item: Project) => (
+                    <Box key={item.id}>
+                        <CardProject
+                            title={item.title}
+                            type={item.type}
+                            img={item.dirName}
+                            id={item.id}
+                        />
+                    </Box>
+                ))}
+
+            </Box>
             <Flex alignItems="center" justifyContent="center" m="10px">
                 <Link href="https://github.com/lcspaiva87">
                     <Button

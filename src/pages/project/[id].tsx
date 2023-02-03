@@ -13,7 +13,7 @@ export default function project({ project }: any) {
 export const getServerSideProps: GetServerSideProps = async (props: any) => {
     const { id } = props.params;
     const project = await prisma.project.findMany();
-
+    console.log("project",project)
     const projectFilter = project.find(
         (project: Project) => project.title === id
     );
