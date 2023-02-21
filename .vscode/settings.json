@@ -1,0 +1,45 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+
+    "postcssSorting.config": {
+      "properties-order": "alphabetical",
+    },
+    "workbench.colorTheme": "Dracula",
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.timeline.showUncommitted": true,
+    "window.zoomLevel": 1,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": false,
+      "source.addMissingImports": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.renderControlCharacters": false,
+    "workbench.sideBar.location": "right",
+    "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "workbench.startupEditor": "none",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
