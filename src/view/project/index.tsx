@@ -28,7 +28,6 @@ import { Carousel } from 'react-responsive-carousel'
 export function ProjectView() {
 
     const [fileExists, setFileExists] = useState(false);
-
     const router = useRouter();
     console.log(fileExists)
     const project: any = Projects?.find((item: any) => item.title === router.query.id);
