@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Flex, Image, Link, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 interface CardProjectPorps {
     title: string;
@@ -11,6 +12,10 @@ interface CardProjectPorps {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 export function CardProject({ img, title, type, id }: CardProjectPorps) {
+    const router = useRouter();
+    const handleClick = (e: any) => {
+        router.push(`/project/${title}`);
+    };
     return (
         <Flex
             border="2px solid #626264"
@@ -26,9 +31,9 @@ export function CardProject({ img, title, type, id }: CardProjectPorps) {
                 overflow: "hidden",
             }}
         >
-            <Link href={`/project/${title}`} key={id}>
+            <Link onClick={()=>handleClick()} key={id}>
                 <Image
-                    src={`/project/${img.toLocaleLowerCase()}/${img.toLocaleLowerCase()}.png`}
+                    src={`/project/${img?.toLocaleLowerCase()}/${img?.toLocaleLowerCase()}.png`}
                     alt={title}
                     width="100%"
                     height="auto"

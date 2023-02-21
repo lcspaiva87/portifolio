@@ -140,65 +140,27 @@ export const Projects = [
             },
         ],
     },
+
     {
         _id: "6",
-        title: "RocketShoes",
-        url: "https://rocket-shoes-seven.vercel.app/",
+        title: "Be The Hero",
+        url: "betheheros-next.vercel.app",
         type: "Web",
-        dirName: "RocketShoes",
-        github: "https://github.com/lcspaiva87/RocketShoes",
+        dirName: "bethehero",
+        github: "https://github.com/lcspaiva87/betheheros-next",
         description:
-            "Esta é a parte web do projeto Rocketshoes, um E-commerce sobre venda de calçados",
+            "Aplicação para conectar ONGs e outras instituições a pessoas que tem disponibilidade para ajudar",
         tag: [
             {
-                value: "ReactJs",
+                value: "NextJs",
             },
             {
-                value: "Styled-Components",
+                value: "Prisma",
             },
-            {
-                value: "Redux",
-            },
-            {
-                value: "TypeScript",
-            },
-            {
-                value: "Immer",
-            },
-            {
-                value: "Reactotron",
-            },
+
         ],
     },
-    {
-        _id: "7",
-        title: "RocketShoes",
-        url: "https://rocket-shoes-seven.vercel.app/",
-        type: "Web",
-        dirName: "RocketShoes",
-        github: "https://github.com/lcspaiva87/RocketShoes",
-        description:
-            "Esta é a parte web do projeto Rocketshoes, um E-commerce sobre venda de calçados",
-        tag: [
-            {
-                value: "ReactJs",
-            },
-            {
-                value: "Styled-Components",
-            },
-            {
-                value: "Redux",
-            },
-            {
-                value: "TypeScript",
-            },
-            {
-                value: "Immer",
-            },
-            {
-                value: "Reactotron",
-            },
-        ],
-    },
+
+
 ];
 

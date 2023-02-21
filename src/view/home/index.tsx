@@ -21,15 +21,13 @@ const HomeView = ({ skills, project }: any) => {
 
     return (
         <>
-
             <Header />
             <Box as="section" mt="5rem" display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="5rem">
                 <Presentation />
                 <About />
                 <Skill skill={skills} />
                 <Projects project={project} />
-                {/*
-                <WorkExperience /> */}
+                <WorkExperience />
             </Box>
         </>
     );
