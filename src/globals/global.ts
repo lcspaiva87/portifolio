@@ -21,26 +21,12 @@ export const theme = extendTheme({
 
     styles: {
         global: {
-            body: {
-                bg: "gray.900",
-                color: "gray.50",
-                width: "100%",
-                height: "100vh",
-                fontSize: "Libre Baskerville,  sans-serif",
-                "::-webkit-scrollbar": {
-                    width: " 0.5rem",
-                    backgroundColor: "#000",
-
-                },
-                "::-webkit-scrollbar-thumb": {
-                    borderRadius: " 0.5rem",
-                    backgroundColor: "#7928CA",
-                },
-            },
+           
             html: {
                " scroll-behavior": "smooth !important",
-              }
+              },
 
+             
         },
     },
 });

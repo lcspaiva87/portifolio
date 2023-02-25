@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { memo } from "react";
 import { About } from "./components/About";
@@ -21,14 +21,14 @@ const HomeView = ({ skills, project }: any) => {
 
     return (
         <>
-            <Header />
-            <Box as="section" mt="5rem" display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="5rem">
-                <Presentation />
-                <About />
-                <Skill skill={skills} />
-                <Projects project={project} />
-                <WorkExperience />
-            </Box>
+
+
+            <Presentation />
+            {/* <About />
+                    <Skill skill={skills} />
+                    <Projects project={project} />
+                    <WorkExperience /> */}
+
         </>
     );
 };
