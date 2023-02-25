@@ -47,27 +47,24 @@ export function WorkExperience() {
                 >
                     {work.map((item: WorkProps) => (
                         <Box
-
                             padding="2rem"
                             overflow="hidden"
                             maxWidth="500px"
                             display="block"
                             position="relative"
-
                             key={item.id}
-
+                            border="1px solid  #FF0080"
+                            borderRadius={5}
                             _hover={{
-                                border: "1px solid  #FF0080",
-                                boxShadow: "#FF0080 1.95px 1.95px 2.6px",
-                                borderRadius:"0.5rem"
+                                border:"1px solid  #7928CA"
                             }}
+
                         >
                             <Text
                                 as="h1"
                                 fontSize={["1rem", "1rem"]}
                                 lineHeight="1.75rem"
                                 fontFamily="Libre Baskerville"
-
                             >
                                 {item.office}
                             </Text>

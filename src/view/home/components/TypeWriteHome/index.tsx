@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 
 import Typewriter from "typewriter-effect";
 export function TypeWriteHome() {
+
     return (
         <Flex>
             <Text
