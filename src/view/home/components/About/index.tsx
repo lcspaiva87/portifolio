@@ -1,17 +1,14 @@
-import { Flex, Text, Image, Box } from "@chakra-ui/react";
+import { Flex, Text, Image, Box, VStack } from "@chakra-ui/react";
 import { User } from "phosphor-react";
 
 export function About() {
     return (
 
-        <Box
-            as="section"
-            pt='2rem'
-            alignItems='center'
-            justifyContent='center'
-            flexDirection='column'
+        <VStack
+           
+            w="full" h="full" justifyContent="center"
             id="about"
-            display={"inline-flex"}
+           
         >
             <Flex alignItems='center' gap={2} justifyContent='center'>
                 <User size='50px' color='#FF0080' />
@@ -49,14 +46,14 @@ export function About() {
                         alt='Dan Abramov'
                     />
                 </Flex>
-                <Box p="0 1rem" textAlign="start" maxWidth="31rem" fontWeight={500}>
+                <Box textAlign="start" maxWidth="31rem" fontWeight={500}>
                     <Flex gap={1} flexDirection='column' >
                         <Text as='p'>Sou um desenvolvedor Front-End que vive em Maracanau Ceara, sou formado em Sistema da Informaçao.</Text>
                         <Text as='p'>Meu interesse e primeiro contato com desenvolvimento web começou em 2019, com a criação de um site feito em Html, Css e JavaScript.</Text>
                     </Flex>
                 </Box>
             </Box>
-        </Box>
+        </VStack>
 
     );
 }

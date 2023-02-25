@@ -3,10 +3,11 @@ import Head from "next/head";
 import HomeView from "../view/home";
 import { GetServerSideProps, NextPage } from "next";
 
-import { Projects} from "../mock/project";
-import { Box, Text } from "@chakra-ui/react";
+import { Projects } from "../mock/project";
+import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import { Project, ProjectsProps, Skill, SkillsProps } from "../@types";
 import { Skills } from "../mock/Skills";
+import Header from "../view/home/components/Header";
 
 
 // eslint-disable-next-line react/prop-types
@@ -21,14 +22,19 @@ const Home: NextPage = (props) => {
     }));
     return (
         <>
+            <Header />
+            <VStack w="full" h="full" >
+                <HStack w="full" >
 
-            <HomeView
-                skills={propsValue[0]["skill"]}
-                project={propsValue[0]["project"]}
-            />
-            <Box bg="gray.700" color="white" p={4} mt="10px">
+                    <HomeView
+                        skills={propsValue[0]["skill"]}
+                        project={propsValue[0]["project"]}
+                    />
+                </HStack>
+                {/* <Box bg="gray.700" color="white" p={4} mt="10px">
                 <Text>Copyright © {new Date().getFullYear()} Lucas Paiva</Text>
-            </Box>
+            </Box> */}
+            </VStack>
         </>
     );
 };

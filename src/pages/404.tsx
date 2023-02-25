@@ -13,6 +13,7 @@ const Page404 = () => {
         animationData: erro404,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
+
         }
     };
     useEffect(() => {
